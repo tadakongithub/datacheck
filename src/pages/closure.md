@@ -58,3 +58,10 @@ count関数を最初に呼ぶと、outside関数の中にあるinside関数を�
 3回目に呼ぶときは、変数numは(2)に変わっているので、そこに１を加え(2 + 1 = 3)、その値(3)が返されます。
 
 以上です。何かご指摘等ありましたらよろしくお願いいたします。
+
+<div class="codepen" data-height="265" data-theme-id="light" data-default-tab="html,result" data-user="tadapon" data-slug-hash="YzwxQXp" data-prefill='{"tags":[],"scripts":[],"stylesheets":[]}'>
+  <pre data-lang="html">&lt;div>
+  hello
+&lt;/div></pre></div>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
