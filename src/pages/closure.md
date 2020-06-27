@@ -1,4 +1,5 @@
 ---
+slug: '/closure'
 title: 'クロージャー'
 category: 'Javascript'
 date: '2020-06-25'
@@ -9,16 +10,16 @@ date: '2020-06-25'
 1. グローバル変数を用いずに
 
 ```javascript
-console.log(count())//1
-console.log(count())//2
-console.log(count())//3
+console.log(counter())//1
+console.log(counter())//2
+console.log(counter())//3
 ```
 
 グローバル変数を用いる場合の例です。
 ```javascript
 var num = 0;
 
-function count() {
+function counter() {
     num = num + 1;
     return num;
 }
@@ -46,22 +47,16 @@ function inside() {
     return num;
 }
 ```
-なので、変数countは、outside関数の中にあるinside関数を指していることとなります。
+なので、変数counterは、outside関数の中にあるinside関数を指していることとなります。
 
 ### クロージャー
 ここでポイントですが、このinside関数は外側のoutside関数のスコープにアクセスできます。つまり、inside関数は自分を含んでいるoutside関数の中にあるnum変数にアクセスできるのです。このように、内側の関数が外側の関数のスコープにアクセスできることをクロージャーと言います。
 
-count関数を最初に呼ぶと、outside関数の中にあるinside関数を実行していることと同じになります。inside関数の外（でoutside関数の中）にあるnumに１を加え(0 + 1 = 1)、その値(1)を返します。
+counter関数を最初に呼ぶと、outside関数の中にあるinside関数を実行していることと同じになります。inside関数の外（でoutside関数の中）にあるnumに１を加え(0 + 1 = 1)、その値(1)を返します。
 
 ２回目に呼ぶときは、変数numは(1)に変わっているので、その値に１を加え(1 + 1 = 2)、その値(2)が返されます。
 
 3回目に呼ぶときは、変数numは(2)に変わっているので、そこに１を加え(2 + 1 = 3)、その値(3)が返されます。
 
 以上です。何かご指摘等ありましたらよろしくお願いいたします。
-
-<div class="codepen" data-height="265" data-theme-id="light" data-default-tab="html,result" data-user="tadapon" data-slug-hash="YzwxQXp" data-prefill='{"tags":[],"scripts":[],"stylesheets":[]}'>
-  <pre data-lang="html">&lt;div>
-  hello
-&lt;/div></pre></div>
-<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
 
